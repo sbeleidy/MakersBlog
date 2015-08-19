@@ -24,7 +24,7 @@ Route::get('admin', function() {
 
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function() {
 	Route::get('admin/upload', 'UploadController@index');
-	Route::resource('admin/post', 'PostContoller');
+	Route::resource('admin/post', 'PostController');
 	Route::resource('admin/tag', 'TagController');
 
 });
