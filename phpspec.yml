@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Makersblog
+        psr4_prefix: Makersblog
+        src_path: app
