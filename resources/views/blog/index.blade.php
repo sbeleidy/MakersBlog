@@ -2,11 +2,12 @@
 <html>
 <head>
 	<title>{{ config('blog.title') }} </title>
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
 	<section class="base">
 		<div class="row">
-			<div class="small-12">
+			<div class="small-12 columns">
 				<h1>{{ config('blog.title') }}</h1>
 				<h5>Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</h5>
 				<ul>
