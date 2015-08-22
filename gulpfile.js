@@ -1,4 +1,16 @@
+var gulp = require('gulp');
 var elixir = require('laravel-elixir');
+
+
+gulp.task("dupefiles", function() {
+	gulp.src("vendor/bower_down/components-font-awesome/css/font-awesome.min.css")
+		.pipe(gulp.dest("public/css"));
+	gulp.src("vendor/bower_down/components-font-awesome/fonts/**")
+		.pipe(gulp.dest("public/fonts"));
+	gulp.src("vendor/bower_down/jquery/dist/jquery.min.js")
+		.pipe(gulp.dest("public/js"));
+});
+
 
 /*
  |--------------------------------------------------------------------------

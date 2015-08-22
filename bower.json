@@ -1,0 +1,16 @@
+{
+  "name": "mblog",
+  "version": "0.0.0",
+  "homepage": "https://github.com/MakersCabin/MakersBlog",
+  "authors": [
+    "Scrivs <scrivs@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor/bower_down",
+    "test",
+    "tests"
+  ]
+}
