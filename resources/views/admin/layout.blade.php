@@ -27,5 +27,7 @@
 	<script src="/js/foundation.topbar.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="/js/foundation.reveal.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="/js/app.js" type="text/javascript" charset="utf-8" async defer></script>
+
+	@yield('scripts')
 </body>
 </html>
