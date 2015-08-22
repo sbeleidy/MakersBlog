@@ -9,6 +9,10 @@ gulp.task("dupefiles", function() {
 		.pipe(gulp.dest("public/fonts"));
 	gulp.src("vendor/bower_down/jquery/dist/jquery.min.js")
 		.pipe(gulp.dest("public/js"));
+	gulp.src("node_modules/zurb-foundation-5/js/foundation/**")
+		.pipe(gulp.dest("public/js"));
+	gulp.src("vendor/bower_down/modernizr/modernizr.js")
+		.pipe(gulp.dest("public/js"));
 });
 
 

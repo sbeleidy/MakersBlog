@@ -12,5 +12,8 @@
     "vendor/bower_down",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "modernizr": "~2.8.3"
+  }
 }
