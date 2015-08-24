@@ -26,8 +26,8 @@ class UploadsManager {
 		$breadcrumbs = array_slice($breadcrumbs, 0, -1);
 
 		$subfolders = [];
-		foreach (array_unique($this->disk->directories($folder)) as $subfolders) {
-			$subfolders["/$subfolders"] = basename($subfolders);
+		foreach (array_unique($this->disk->directories($folder)) as $subfolder) {
+			$subfolders["/$subfolder"] = basename($subfolder);
 		}
 
 		$files = [];
@@ -123,5 +123,66 @@ class UploadsManager {
 	public function fileModified($path)
 	{
 		return Carbon::createFromTimestamp($this->disk->lastModified($path));
+	}
+
+	/**
+	 * Create a new directory
+	 */
+	public function createDirectory($folder)
+	{
+		$folder = $this->cleanFolder($folder);
+
+		if ($this->disk->exists($folder)) {
+			return "Folder '$folder' already exists.";
+		}
+
+		return $this->disk->makeDirectory($folder);
+	}
+
+	/**
+	 * Delete a directory
+	 */
+	public function deleteDirectory($folder)
+	{
+		$folder = $this->cleanFolder($folder);
+
+		$filesFolder = array_merge(
+			$this->disk->directories($folder),
+			$this->disk->files($folder)
+		);
+		if (! empty($filesFolder)) {
+			return "Directory must be empty to delete it.";
+		}
+
+		return $this->disk->deleteDirectory($folder);
+
+	}
+
+	/**
+	* Delete a file
+	 */
+	public function deleteFile($path)
+	{
+		$path = $this->cleanFolder($path);
+
+		if (! $this->disk->exists($path)) {
+			return "File does not exist.";
+		}
+
+		return $this->disk->delete($path);
+	}
+
+	/**
+	 * Save a file
+	 */
+	public function saveFile($path, $content)
+	{
+		$path = $this->cleanFolder($path);
+
+		if ($this->disk->exists($path)) {
+			return "File already exists.";
+		}
+
+		return $this->disk->put($path, $content);
 	}
 }

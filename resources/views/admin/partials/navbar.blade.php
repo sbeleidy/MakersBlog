@@ -15,9 +15,11 @@
 	      @if (Auth::guest())
 	      	<li><a href="/auth/login">Login</a></li>
 	      @else 
-	      	<li>
+	      	<li class="has-dropdown">
 	      		<a href="#" class="">{{ Auth::user()->name }}</a>
+	      		<ul class="dropdown">
+	      			<li><a href="/auth/logout">Logout</a></li>
+	      		</ul>
 	      	</li>
-	      	<li><a href="/auth/logout">Logout</a></li>
 	      @endif
 	    </ul>

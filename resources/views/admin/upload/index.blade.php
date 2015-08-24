@@ -12,8 +12,8 @@
 				<li class="active">{{ $folderName}}</li>
 			</ul>
 			<div class="pull-right">
-				<button type="button" class="button success">New Folder</button>
-				<button type="button" class="button">Upload</button>
+				<a href="#" type="button" data-reveal-id="createFolder" class="button success">New Folder</a>
+				<a href="#" type="button" data-reveal-id="uploadFile" class="button">Upload</a>
 			</div>
 
 			@include('admin.partials.errors')
@@ -58,7 +58,7 @@
 						</td>
 						<td>{{ $file['mimeType'] or 'Unknown' }}</td>
 						<td>{{ $file['modified']->format('j-M-y g:ia') }}</td>
-						<td>{{ human_filesize($file['size']) }}</td>
+						<td>{{ human_filesizes($file['size']) }}</td>
 						<td>
 							<button type="button" class="button alert" onclick="delete_file('{{ $file['name'] }}')">Delete</button>
 							@if (is_image($file['mimeType']))
@@ -84,19 +84,19 @@
 	function delete_file(name) {
 		$("#delete-file-name1").html(name);
 		$("#delete-file-name2").val(name);
-		$("#modal-file-delete").modal("show");
+		//$("#modal-file-delete").modal("show");
 	}
 
 	// Confirm folder delete
 	function delete_folder(name) {
 		$("#delete-folder-name1").html(name);
 		$("#delete-folder-name2").val(name);
-		$("#modal-folder-delete").modal("show");
+		//$("#modal-folder-delete").modal("show");
 	}
 
 	function preview_image(path) {
 		$("#preview-image").attr("src", path);
-		$("modal-image-view").modal("show");
+		//$("modal-image-view").modal("show");
 	}
 </script>
 @stop
