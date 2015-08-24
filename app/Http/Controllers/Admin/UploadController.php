@@ -57,7 +57,7 @@ class UploadController extends Controller
         $result = $this->manager->deleteFile($path);
 
         if ($result === true) {
-            return redirect()->back->withSuccess("File '$del_file' was deleted.");
+            return redirect()->back()->withSuccess("File '$del_file' was deleted.");
         }
 
         $error = $result ? : "An error occurred deleted file.";

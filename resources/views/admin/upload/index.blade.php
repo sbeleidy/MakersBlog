@@ -39,7 +39,7 @@
 						<td>Folder</td>
 						<td>-</td>
 						<td>-</td>
-						<td><button type="button" class="button alert" onclick="delete_folder('{{ $name }}')">Delete</button></td>
+						<td><a href="#" type="button" data-reveal-id="deleteFolder" onclick="delete_folder('{{ $name }}')" class="button alert">Delete</a></td>
 					</tr>
 				@endforeach
 
@@ -60,9 +60,9 @@
 						<td>{{ $file['modified']->format('j-M-y g:ia') }}</td>
 						<td>{{ human_filesizes($file['size']) }}</td>
 						<td>
-							<button type="button" class="button alert" onclick="delete_file('{{ $file['name'] }}')">Delete</button>
+							<a href="#" type="button" data-reveal-id="deleteFile" onclick="delete_file('{{ $file['name'] }}')" class="button alert">Delete</a>
 							@if (is_image($file['mimeType']))
-								<button type="button" class="button success" onclick="preview_image('{{ $file['webPath'] }}')">Preview</button>
+								<a href="#" onclick="preview_image('{{ $file['webPath'] }}')" data-reveal-id="previewImage" class="button success">Preview</a>
 							@endif
 						</td>
 					</tr>

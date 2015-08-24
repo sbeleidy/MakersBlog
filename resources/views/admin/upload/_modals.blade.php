@@ -56,5 +56,5 @@
 {{-- View Image Modal --}}
 <div id="previewImage" class="reveal-modal" data-reveal aria-labelledby="View Image" aria-hidden="true" role="dialog">
 	<h2 id="modalTitle">Preview Image</h2>
-	<img id="preview-image" src="x">
+	<img id="preview-image" src="">
 </div>

@@ -20,14 +20,14 @@
 	  </section>
 	</nav>
 	@yield('content')
-	<script src="/js/modernizr.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/js/foundation.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/js/foundation.alert.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/js/foundation.topbar.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/js/foundation.dropdown.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/js/foundation.reveal.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="/js/app.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="/js/modernizr.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/foundation.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/foundation.alert.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/foundation.topbar.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/foundation.dropdown.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/foundation.reveal.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
 
 	@yield('scripts')
 </body>
