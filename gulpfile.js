@@ -13,6 +13,22 @@ gulp.task("dupefiles", function() {
 		.pipe(gulp.dest("public/js"));
 	gulp.src("vendor/bower_down/modernizr/modernizr.js")
 		.pipe(gulp.dest("public/js"));
+
+	// Copy selectize
+	gulp.src("vendor/bower_down/selectize/dist/css/**")
+		.pipe(gulp.dest("public/assets/selectize/css"));
+	gulp.src("vendor/bower_down/selectize/dist/js/standalone/selectize.min.js")
+		.pipe(gulp.dest("public/assets/selectize/"));
+
+	// Copy pickable
+	gulp.src("vendor/bower_down/pickadate/lib/compressed/themes/**")
+		.pipe(gulp.dest("public/assets/pickadate/themes/"));
+	gulp.src("vendor/bower_down/pickadate/lib/compressed/picker.js")
+		.pipe(gulp.dest("public/assets/pickadate"));
+	gulp.src("vendor/bower_down/pickadate/lib/compressed/picker.date.js")
+		.pipe(gulp.dest("public/assets/pickadate/"));
+	gulp.src("vendor/bower_down/pickadate/lib/compressed/picker.time.js")
+		.pipe(gulp.dest("public/assets/pickadate/"));
 });
 
 

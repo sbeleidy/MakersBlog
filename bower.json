@@ -15,5 +15,9 @@
   ],
   "devDependencies": {
     "modernizr": "~2.8.3"
+  },
+  "dependencies": {
+    "selectize": "~0.12.1",
+    "pickadate": "~3.5.6"
   }
 }
