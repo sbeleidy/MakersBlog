@@ -23,7 +23,7 @@ class BlogController extends Controller
     	return view($layout, $data);
     }
 
-    public function showPost($slug)
+    public function showPost($slug, Request $request)
     {
     	$post = Post::with('tags')->whereSlug($slug)->firstOrFail();
         $tag = $request->get('tag');
