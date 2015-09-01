@@ -4,27 +4,34 @@ namespace Makersblog\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Makersblog\Jobs\BlogIndexData;
 use Makersblog\Http\Requests;
 use Makersblog\Http\Controllers\Controller;
+use Makersblog\Tag;
 use Makersblog\Post;
 use Carbon\Carbon;
 
 class BlogController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-    	$posts = Post::where('published_at', '<=', Carbon::now())
-    		->orderBy('published_at', 'desc')
-    		->paginate(config('blog.posts_per_page'));
+        $tag = $request->get('tag');
+        $data = $this->dispatch(new BlogIndexData($tag));
+    	$layout = $tag ? Tag::layout($tag) : 'blog.layouts.index';
 
-    	return view('blog.index', compact('posts'));
+    	return view($layout, $data);
     }
 
     public function showPost($slug)
     {
-    	$post = Post::whereSlug($slug)->firstOrFail();
+    	$post = Post::with('tags')->whereSlug($slug)->firstOrFail();
+        $tag = $request->get('tag');
 
-    	return view('blog.post', compact('post')); 
+        if ($tag) {
+            $tag = Tag::whereTag($tag)->firstOrFail();
+        }
+
+        return view($post->layout, compact('post', 'tag'));
     }
 }
