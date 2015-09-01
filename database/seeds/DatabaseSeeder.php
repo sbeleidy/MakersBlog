@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UserTableSeeder::class);
         $this->call(Makersblog\PostTableSeeder::class);
+        $this->call(Makersblog\TagTableSeeder::class);
 
         Model::reguard();
     }
