@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@showPost');
 
+Route::get('contact', 'ContactController@showForm');
+Route::post('contact', 'ContactController@sendContactInfo');
+
 Route::get('admin', function() {
 	return redirect('/admin/post');
 });
