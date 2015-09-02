@@ -9,6 +9,7 @@ use Makersblog\Http\Requests;
 use Makersblog\Http\Controllers\Controller;
 use Makersblog\Tag;
 use Makersblog\Post;
+use Makersblog\Services\RssFeed;
 use Carbon\Carbon;
 
 class BlogController extends Controller
@@ -32,6 +33,13 @@ class BlogController extends Controller
             $tag = Tag::whereTag($tag)->firstOrFail();
         }
 
-        return view($post->layout, compact('post', 'tag'));
+        return view($post->layout, compact('post', 'tag', 'slug'));
+    }
+
+    public function rss(RssFeed $feed)
+    {
+        $rss = $feed->getRSS();
+
+        return response($rss)->header('Content-type', 'application/rss+xml');
     }
 }
