@@ -5,7 +5,7 @@
 <link href="/assets/pickadate/themes/default.date.css" rel="stylesheet"> 
 <link href="/assets/pickadate/themes/default.time.css" rel="stylesheet"> 
 <link href="/assets/selectize/css/selectize.css" rel="stylesheet">
-@stop
+@endsection
 
 @section('content')
 <section class="post">
@@ -48,7 +48,7 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
-@stop
+@endsection
 
 
 @section('scripts')
@@ -68,4 +68,4 @@ $(function() { $("#publish_date").pickadate({
 	});
 });
 </script>
-@stop
+@endsection
