@@ -45,4 +45,5 @@ gulp.task("dupefiles", function() {
 
 elixir(function(mix) {
     mix.sass('app.scss');
+    mix.phpUnit('phpunit.xml');
 });
