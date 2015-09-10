@@ -11,7 +11,7 @@
 			@endforeach
 				<li class="active">{{ $folderName}}</li>
 			</ul>
-			<div class="pull-right">
+			<div class="right">
 				<a href="#" type="button" data-reveal-id="createFolder" class="button success">New Folder</a>
 				<a href="#" type="button" data-reveal-id="uploadFile" class="button">Upload</a>
 			</div>
