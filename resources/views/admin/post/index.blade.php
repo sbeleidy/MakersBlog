@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="small-12 columns">
 			<h2>Posts</h2>
-			<div class="pull-right"><a href="/admin/post/create" class="button radius">New Post</a></div>
+			<div class="right"><a href="/admin/post/create" class="button radius">New Post</a></div>
 
 			@include('admin.partials.errors')
 			@include('admin.partials.success')

@@ -4,7 +4,7 @@
 <section class="tags">
 	<div class="row">
 		<div class="small-12 columns">
-			<h2>Tags <span class="pull-right"><a href="/admin/tag/create" class="button radius"><i class="fa fa-plus-circle"></i> Add New Tag</a></span></h2>
+			<h2>Tags <span class="right"><a href="/admin/tag/create" class="button radius"><i class="fa fa-plus-circle"></i> Add New Tag</a></span></h2>
 		</div>
 		<div class="small-12 columns">
 			@include('admin.partials.errors')
